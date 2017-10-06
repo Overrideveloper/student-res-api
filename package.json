@@ -4,7 +4,8 @@
   "description": "A simple application for managing student's resources/data in a school. For the Andela 2.0 assessment.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [
     "API",
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Overrideveloper/student-res-api/issues"
   },
-  "homepage": "https://github.com/Overrideveloper/student-res-api#readme"
+  "homepage": "https://github.com/Overrideveloper/student-res-api#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
 }
