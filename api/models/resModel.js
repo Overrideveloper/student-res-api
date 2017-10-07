@@ -5,38 +5,38 @@ var Schema = mongoose.Schema;
 
 var StudentSchema = new Schema({
     surname: {
-        type: string,
+        type: String,
         required: 'Surname is required!'
     },
     midname: {
-        type: string
+        type: String
     },
     firstname: {
-        type: string,
+        type: String,
         required: 'First name is required!'
     },
     regno:{
-        type: string,
+        type: String,
         unique: true,
         required: 'Registration number is required!'
     },
     image:{
-        type: string
+        type: String
     },
     stateoforigin:{
-        type: string,
+        type: String,
         required: 'State of origin is required!'
     },
     dob:{
-        type: Date,
+        type: String,
         required: 'Date of birth is required!'
     },
     department:{
-        type: string,
+        type: String,
         required: 'Department is required!'
     },
     level: {
-        type: string,
+        type: String,
         required: 'Level is required!'
     }
 });

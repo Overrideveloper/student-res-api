@@ -7,7 +7,7 @@ As you can see, we required the controller so each of the routes methods can cal
 
 'use strict';
 module.exports = function(app) {
-    var studentRes = require('../controllers/studentResController');
+    var studentRes = require('../controllers/resController');
 
     //Routes
     app.route('/students')
