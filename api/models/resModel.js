@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var StudentRes = new Schema({
+var StudentSchema = new Schema({
     surname: {
         type: string,
         required: 'Surname is required!'
@@ -41,4 +41,4 @@ var StudentRes = new Schema({
     }
 });
 
-module.exports = mongoose.model('StudentRes', StudentRes);
+module.exports = mongoose.model('Students', StudentSchema);

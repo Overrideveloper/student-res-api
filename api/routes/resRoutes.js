@@ -12,7 +12,7 @@ module.exports = function(app) {
     //Routes
     app.route('/students')
         .get(studentRes.list_students)
-        .post(studentRes.create(studentRes.create_students);
+        .post(studentRes.create_student);
 
     app.route('/students/:studentId')
         .get(studentRes.read_student)
