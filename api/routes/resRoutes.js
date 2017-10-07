@@ -9,12 +9,18 @@ As you can see, we required the controller so each of the routes methods can cal
 module.exports = function(app) {
     var studentRes = require('../controllers/resController');
 
+    app.use(function(req, res, next){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
+
     //Routes
-    app.route('/students')
+    app.route('/api/students')
         .get(studentRes.list_students)
         .post(studentRes.create_student);
 
-    app.route('/students/:studentId')
+    app.route('/api/students/:studentId')
         .get(studentRes.read_student)
         .put(studentRes.update_student)
         .delete(studentRes.delete_student);
