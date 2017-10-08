@@ -13,7 +13,18 @@ var express = require('express'),
 
 //connect to MongoDB server
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/SchoolInfoDB');
+var option = {
+    useMongoClient : true,
+    keepAlive: 300000,
+    connectTimeoutMS: 30000
+};
+mongoose.connect('mongodb://localhost/SchoolInfoDB', option)
+    .then(function(){
+        console.log('Connected to MongoDB');
+    },
+    function(err){
+        console.log('Error: ' + err);
+    });
 
 //use body-parser
 app.use(bodyparser.urlencoded({ extended : true }));
