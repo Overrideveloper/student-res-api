@@ -23,6 +23,7 @@ exports.create_student = function(req, res){
     new_student.save(function(err, student){
         if(err)
             res.send(err);
+        res.status(201);
         res.json(student);
     });
 };
