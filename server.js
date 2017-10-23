@@ -26,6 +26,10 @@ mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435
         console.log('Error: ' + err);
     });
 
+//use body-parser
+app.use(bodyparser.urlencoded({ extended : true }));
+app.use(bodyparser.json());
+
 app.use(function (req, res, next) {
     
     // Website you wish to allow to connect
@@ -44,11 +48,6 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-
-//use body-parser
-app.use(bodyparser.urlencoded({ extended : true }));
-app.use(bodyparser.json());
-
 
 //import routes
 var routes = require('./api/routes/resRoutes');
