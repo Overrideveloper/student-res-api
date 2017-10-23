@@ -18,7 +18,7 @@ var option = {
     keepAlive: 300000,
     connectTimeoutMS: 30000
 };
-mongoose.connect('mongodb://localhost/SchoolInfoDB', option)
+mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435/schoolinfodb', option)
     .then(function(){
         console.log('Connected to MongoDB');
     },
