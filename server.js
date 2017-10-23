@@ -41,6 +41,16 @@ app.use(function(req, res){
     res.status(404).send({ url: req.originalUrl + ' not found!'});
 });
 
+app.use(function(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
+    }
+    next();
+});
+
 app.listen(port);
 
 console.log(`School Resource Management API server started on ` + port);
