@@ -2,10 +2,10 @@
   "name": "student-resource-app",
   "version": "1.0.0",
   "description": "A simple application for managing student's resources/data in a school. For the Andela 2.0 assessment.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "API",
