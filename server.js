@@ -2,8 +2,8 @@
 
 var express = require('express'),
     app = express(),
-    //start server on port 3000
-    port = process.env.port || 3000,
+    //start server on port 5000
+    port = process.env.PORT || 5000,
     //mongoose instance
     mongoose = require('mongoose'),
     //load created data model
