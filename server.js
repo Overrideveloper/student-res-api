@@ -30,6 +30,9 @@ mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435
 app.use(bodyparser.urlencoded({ extended : true }));
 app.use(bodyparser.json());
 
+//import routes
+var routes = require('./api/routes/resRoutes');
+
 app.use(function (req, res, next) {
     
     // Website you wish to allow to connect
@@ -49,8 +52,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-//import routes
-var routes = require('./api/routes/resRoutes');
 //register routes
 routes(app);
 
