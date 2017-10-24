@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var StudentSchema = new Schema({
+    _id: String,
     surname: {
         type: String,
         required: 'Surname is required!'
