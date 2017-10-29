@@ -32,7 +32,7 @@ mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435
 app.use(bodyparser.urlencoded({ extended : true }));
 app.use(bodyparser.json());
 //use express-fileupload
-app.use(fileUpload({ safeFileNames: true, preserveExtension: true }));
+app.use(fileUpload({ safeFileNames: true, preserveExtension: true, limits: { fileSize: 15 * 1024 * 1024 }}));
 
 //import routes
 var routes = require('./api/routes/resRoutes');
