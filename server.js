@@ -67,4 +67,4 @@ app.use(function(req, res){
 
 app.listen(port);
 
-console.log(`School Resource Management API server started on ` + port);
+console.log(`SIMS server started on ` + port);
