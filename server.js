@@ -9,7 +9,9 @@ var express = require('express'),
     //load created data model
     Student = require('./api/models/resModel'),
     //body-parser instance
-    bodyparser = require('body-parser');
+    bodyparser = require('body-parser'),
+    //express file-upload instance
+    fileUpload = require('express-fileupload');
 
 //connect to MongoDB server
 mongoose.Promise = global.Promise;
@@ -29,6 +31,8 @@ mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435
 //use body-parser
 app.use(bodyparser.urlencoded({ extended : true }));
 app.use(bodyparser.json());
+//use express-fileupload
+app.use(fileUpload({ safeFileNames: true, preserveExtension: true }));
 
 //import routes
 var routes = require('./api/routes/resRoutes');

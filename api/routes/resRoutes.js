@@ -18,4 +18,18 @@ module.exports = function(app) {
         .get(studentRes.read_student)
         .put(studentRes.update_student)
         .delete(studentRes.delete_student);
+    
+    app.post('/api/upload', function(req, res){
+        if(!req.files)
+            return res.status(400).send('No files were uploaded!');
+
+        let image = req.files.image;
+        let imageName = image.name;
+
+        image.mv('./api/uploads/images/' + imageName, function(err){
+            if(err)
+                return res.status(500).send(err);
+            res.json({ imageName: imageName });
+        });
+    });
 };
