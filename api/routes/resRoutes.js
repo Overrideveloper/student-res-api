@@ -26,7 +26,7 @@ module.exports = function(app) {
         let image = req.files.image;
         let imageName = image.name;
 
-        image.mv('./api/uploads/images/' + imageName, function(err){
+        image.mv('./upload/image/' + imageName, function(err){
             if(err)
                 return res.status(500).send(err);
             res.json({ imageName: imageName });

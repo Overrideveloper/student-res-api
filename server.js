@@ -4,6 +4,7 @@ var express = require('express'),
     app = express(),
     //start server on port 5000
     port = process.env.PORT || 5000,
+    path = require('path'),
     //mongoose instance
     mongoose = require('mongoose'),
     //load created data model
@@ -27,6 +28,8 @@ mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435
     function(err){
         console.log('Error: ' + err);
     });
+
+app.use(express.static(process.cwd() + '/upload'));
 
 //use body-parser
 app.use(bodyparser.urlencoded({ extended : true }));
@@ -66,7 +69,7 @@ routes(app);
 
 //add 404 error code
 app.use(function(req, res){
-    res.status(404).send({ url: req.originalUrl + ' not found!'});
+    res.status(404).send({ 404: req.originalUrl + ' not found!'});
 });
 
 app.listen(port);
