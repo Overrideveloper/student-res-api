@@ -3,7 +3,7 @@
 var express = require('express'),
     app = express(),
     //start server on port 5000
-    port = process.env.PORT || 5000,
+    port = process.env.PORT || 3000,
     path = require('path'),
     //mongoose instance
     mongoose = require('mongoose'),
@@ -21,7 +21,7 @@ var option = {
     keepAlive: 300000,
     connectTimeoutMS: 30000
 };
-mongoose.connect('mongodb://overrideveloper:Smithamanda1@ds229435.mlab.com:29435/schoolinfodb', option)
+mongoose.connect('mongodb://localhost/SchoolInfoDB', option)
     .then(function(){
         console.log('Connected to MongoDB');
     },
